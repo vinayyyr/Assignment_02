@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Home</title>
+<link rel="stylesheet" href="form.css">
+
+</head>
+<body>
+<main>
+<div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Contact</a>
+        <a href="#" class="right">Link</a>
+      </div>
+      
+     
+    <div class="row">
+      <br>
+      <div class="column"></div>
+      <br>
+        <h3>Admin Login</h3>
+        <form>
+          
+          <input type="text" name="username" id="username" Placeholder="enter username"><br>
+          <input type="password" name="password" id="password" Placeholder="enter password"><br>
+          <button onclick="user1()"><a href="admin.html">Login</a></button>
+         
+        </form>
+    </div>
+    <div class="column"></div>
+        <h3>Staff Login</h3>
+        <form>
+          <input type="text" name="username" id="username" Placeholder="enter username"><br>
+          <input type="password" name="password" id="password" Placeholder="enter password"><br>
+          <button onclick="user2()"><a href="staff_login.html">Login</a></button>
+        </form>
+        </div>
+    </div>
+    <script>
+    function user1() {
+        var user = document.getElementById('username').value
+        var pass = document.getElementById('password').value
+        if (user == "admin" && pass == "admin") {
+          window.open("admin.html")
+          
+        } else {
+          alert('incorrect username or password')
+        }
+      }
+
+      function user2() {
+        var user = document.getElementById('username').value
+        var pass = document.getElementById('password').value
+        if (user == "" && pass == "") {
+          window.open("staff_login.html")
+          
+        } else {
+          alert('incorrect username or password')
+        }
+      }
+    </script>
+      
+</main>
+<footer></footer>
+</body>
+</html>

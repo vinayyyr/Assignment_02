@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+  
+
+    <h3>Welcome Admin</h3>
+    <div class="dropdown">
+        <button class="dropbtn">Students</button>
+        <div class="dropdown-content">
+          <a href="students.html">Add Student</a>
+          <a href="students.html">Update Student</a>
+          <a href="students.html">Delete Student</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Staff</button>
+        <div class="dropdown-content">
+          <a href="staff.html">Add Staff</a>
+          <a href="staff.html">Update Staff</a>
+          <a href="staff.html">Delete Staff</a>
+        </div>
+      </div>
+        <br><br>
+
+        <script type="text/javascript">
+          $(document).ready(function() {
+          function addRemoveClass(theRows) {
+              theRows.removeClass("odd even");
+              theRows.filter(":odd").addClass("odd");
+              theRows.filter(":even").addClass("even");
+          }
+          var rows = $("table#myTable tr:not(:first-child)");
+          addRemoveClass(rows);
+          $("#dropdownField").on("change", function() {
+              var selected = this.value;
+              if (selected != "All") {
+                  rows.filter("[department=" + selected + "]").show();
+                  rows.not("[department=" + selected + "]").hide();
+                  var visibleRows = rows.filter("[department=" + selected + "]");
+                  addRemoveClass(visibleRows);
+              } else {
+                  rows.show();
+                 addRemoveClass(rows);
+              }
+          });
+      });
+      
+      </script>
+
+      <div class="dropdownList">
+        Department
+        <select id="dropdownField">
+          <option value="dp1">Computer Engineering</option>
+          <option value="dp2">Architecture</option>
+          <option value="dp3">Social Sciences</option>
+          <option value="dp4">Bio Informatics</option>
+          <option value="dp5">Business Management</option>
+          <option value="dp6">Cultural Sciences</option>
+          </select><br><br>
+         </div>
+         <div class= "dropdownList">
+            Semester
+        <select id="dropdownField">
+          <option value="summer">Summer</option>
+          <option value="winter">Winter</option>
+          </select><br>
+        </div>
+        <br>
+
+<table id="myTable">
+        <tr id="headerRow">
+          <td>Student ID</th>
+          <td>Name</th>
+          <td>Last Name</th>
+          <td>Date of Birth</th>
+          <td>Gender</th>
+          <td>Department</th>
+          <td>Email</th>
+          <td>joining_Date</th>
+        </tr>
+        <tr department="dp1" joining_Date="summer">
+          <td>201819</td>
+          <td>Vinay</td>
+          <td>Raj</td>
+          <td>15.08.1999</td>
+          <td>Male</td>
+          <td>Computer Engineering</td>
+          <td>vinayyyr@gmail.com</td>
+          <td>2016-05-06</td>
+        </tr>
+        <tr department="dp5" joining_date="winter">
+          <td>123456</td>
+          <td>Abdullah</td>
+          <td>Qureshi</td>
+          <td>16.06.1998</td>
+          <td>Male</td>
+          <td>Business Management</td>
+          <td>abdullahqureshi@gmail.com</td>
+          <td>2018-08-09</td>
+        </tr>
+        <tr department="dp4" joining_date="summer">
+          <td>654321</td>
+          <td>Ameer</td>
+          <td>Mustapha</td>
+          <td>04.04.1999</td>
+          <td>Male</td>
+          <td>Bio Informatics</td>
+          <td>mustyy@gmail.com</td>
+          <td>2015-05-05</td>
+        </tr>
+        <tr department="dp5" joining_date="winter">
+          <td>098765</td>
+          <td>Busra</td>
+          <td>Kaya</td>
+          <td>04.04.1997</td>
+          <td>Female</td>
+          <td>Business Management</td>
+          <td>busrakaya@gmail.com</td>
+          <td>2019-11-11</td>
+        </tr>
+        <tr department="dp3" joining_date="summer">
+          <td>987654</td>
+          <td>Anelica</td>
+          <td>Jolie</td>
+          <td>05.07.1996</td>
+          <td>Female</td>
+          <td>Social Sciences</td>
+          <td>angelica@yahoo.com</td>
+          <td>2018-07-09</td>
+        </tr>
+        <tr department="dp1" joining_date="winter">
+          <td>876543</td>
+          <td>Avinash</td>
+          <td>Kumar</td>
+          <td>09.09.1995</td>
+          <td>Male</td>
+          <td>Computer Engineering</td>
+          <td>avinashkumar@outlook.com</td>
+          <td>2016-08-02</td>
+        </tr>
+        <tr department="dp2" joining_date="winter">
+          <td>765432</td>
+          <td>Abdul</td>
+          <td>Rahim</td>
+          <td>18.09.1998</td>
+          <td>Male</td>
+          <td>Architecture</td>
+          <td>djhatim@gmail.com</td>
+          <td>2017-09-07</td>
+        </tr>
+        <tr department="dp2" joining_date="summer">
+          <td>654321</td>
+          <td>Minal</td>
+          <td>Jatoi</td>
+          <td>06.09.1997</td>
+          <td>Female</td>
+          <td>Architecture</td>
+          <td>minaljataoi@outlook.com</td>
+          <td>2020-06-08</td>
+        </tr>
+        <tr department="dp6" joining_date="winter">
+          <td>543210</td>
+          <td>Alana</td>
+          <td>Correia</td>
+          <td>05.14.1999</td>
+          <td>Female</td>
+          <td>Cultural Sciences</td>
+          <td>alanacorreia@gmail.com</td>
+          <td>2020-11-25</td>
+        </tr>
+        <tr department="dp1" joining_date="summer">
+          <td>432109</td>
+          <td>Shams</td>
+          <td>Nabi</td>
+          <td>08.08.1995</td>
+          <td>Male</td>
+          <td>Computer Engineering</td>
+          <td>shamsnabi@yahoo.com</td>
+          <td>2016-05-29</td>
+        </tr>
+      </table>
+      
+      
+
+        
+</body>
+</html>

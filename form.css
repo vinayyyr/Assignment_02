@@ -1,0 +1,121 @@
+body {
+    background-color: lightblue;
+  }
+  .row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 50%;
+  }
+
+  .navbar {
+    overflow: hidden; /* Hide overflow */
+    background-color: #333; /* Dark background color */
+    text-align: center;
+  }
+  
+h2{
+    color: green;
+}
+h3{
+    text-align: left;
+}
+  .navbar a {
+    float: left; 
+    display: block; 
+    color: white; 
+    text-align: center; 
+    padding: 14px 20px; 
+    text-decoration: none; 
+  }
+
+  .footer {
+    text-align: center; /* Center text*/
+    background: #ddd; /* Grey background */
+    padding-right: 40px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Column container */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+
+  .side {
+    flex: 30%; /* Set the width of the sidebar */
+    background-color: #f1f1f1; /* Grey background color */
+    padding: 20px; 
+  }
+  
+  /* Main column */
+  .main {
+    flex: 70%; 
+    background-color: white; 
+    padding: 20px; 
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .column1{
+      text-align: left;
+  }
+  .column2{
+      text-align: right;
+  }
+  body{
+    font-family: Arial, Helvetica, sans-serif; font-size:28px;
+  }
+  #myTable{
+    width:100%;
+    border-collapse:collapse;
+    }
+    #headerRow {
+      background: #2700ff;
+      color: white;
+      font-weight: bold;
+  }
+    #myTable td{
+    padding:3px;
+    border:1px solid #00a5e4;
+    text-align:left;
+    }
+    .dropdownList {
+    padding-bottom:10px;
+    font-weight:bold;
+    }
+    #dropdownField {
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      height: 30px;
+      width: 100px;
+      color: white;
+      background-color: #2700ff;
+  }
+  .odd {
+    background: #cceaff;
+  }
+  .even {
+    background: #99e3ff;
+  }

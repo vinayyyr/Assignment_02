@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Students</title>
+    <link rel="stylesheet" href="form.css">
+    <script src="custom.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+<body>
+  <script>
+    $(document).ready(function () {
+    var currentDate = new Date();
+    $('.disableFuturedate').datepicker({
+    format: 'dd/mm/yyyy',
+    autoclose:true,
+    endDate: "currentDate",
+    maxDate: currentDate
+    }).on('changeDate', function (ev) {
+    $(this).datepicker('hide');
+    });
+    $('.disableFuturedate').keyup(function () {
+    if (this.value.match(/[^0-9]/g)) {
+    this.value = this.value.replace(/[^0-9^-]/g, '');
+    }
+    });
+    });
+    </script>
+
+    <h3>Students</h3>
+    <form action="/action_page.php" method="get" id="form1">
+        <label for="Student_id">Student_id:</label>
+        <input type="integer" id="Student_id" name="Student_id"><br><br>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <label for="DOB">DOB:</label>
+        <input type="text" class="disableFuturedate" min="2004-01-01" max="2018-12-31" placeholder="YYYY-MM-DD">
+        <br><br>
+        <label for="gender">Gender:</label><br>
+        <input type="radio" id="male" name="DOB" value="male">
+        <label for="html">Male</label>
+        <input type="radio" id="female" name="DOB" value="female">
+<label for="html">Female</label><br><br>
+        <label for="lang">Department</label>
+          <select name="Department" id="lang">
+          <option value="CS">Computer Engineering</option>
+          <option value="Arch">Architecture</option>
+          <option value="SoSci">Social Sciences</option>
+          <option value="BA">Business Administration</option>
+          <option value="BM">Business Management</option>
+          <option value="CulSciences">Cultural Sciences</option>
+          
+          </select><br><br>
+          <label for="email">Email_id:</label>
+          <input type="text" id="email" name="email"><br><br>
+          <label for="j_date">Joining Date</label>
+          <input type="date" id="j_date" name="j_date" min="2015-01-01"><br><br>
+        </form>
+        
+        <button type="submit" form="form1" value="Submit">Submit</button>
+        <script>
+          function validateAge($birthday, $age = 17)
+{
+
+    // $birthday can be UNIX_TIMESTAMP or just a string-date.
+    if(is_string($birthday)) {
+        $birthday = strtotime($birthday);
+    }
+
+    // check
+    // 31536000 is the number of seconds in a 365 days year.
+    if(time() - $birthday < $age * 31536000)  {
+        return false;
+    }
+
+    return true;
+}
+        </script>
+</body>
+</html>
